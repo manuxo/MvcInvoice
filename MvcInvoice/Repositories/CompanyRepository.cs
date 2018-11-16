@@ -11,6 +11,11 @@ namespace MvcInvoice.Repositories
 
         private MvcInvoiceContext context;
 
+        public CompanyRepository()
+        {
+
+        }
+
         public void Create(Company entity)
         {
             using(context = new MvcInvoiceContext())
@@ -24,6 +29,7 @@ namespace MvcInvoice.Repositories
         {
             using(context = new MvcInvoiceContext())
             {
+                context.Companies.Attach(entity);
                 context.Companies.Remove(entity);
                 context.SaveChanges();
             }
