@@ -11,44 +11,35 @@ namespace MvcInvoice.Services
     {
         private ICompanyRepository repo = null;
 
+
+        public CompanyService()
+        {
+            repo = new CompanyRepository();
+        }
+
         public void Create(Company entity)
         {
-            using(repo = new CompanyRepository())
-            {
-                repo.Create(entity);
-            }
+            this.repo.Create(entity);
         }
 
         public void Delete(Company entity)
         {
-            using(repo = new CompanyRepository())
-            {
-                repo.Delete(entity);
-            }
+            this.repo.Delete(entity);
         }
 
-        public Company Find(int id)
+        public Company Find(int Id)
         {
-            using(repo = new CompanyRepository())
-            {
-                return repo.Find(id);
-            }
+            return this.repo.Find(Id);
         }
 
         public IEnumerable<Company> Read()
         {
-            using(repo = new CompanyRepository())
-            {
-                return repo.Read();
-            }
+            return this.repo.Read();
         }
 
         public void Update(Company entity)
         {
-            using(repo = new CompanyRepository())
-            {
-                repo.Update(entity);
-            }
+            this.repo.Update(entity);
         }
     }
 }

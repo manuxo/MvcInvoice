@@ -10,7 +10,7 @@ namespace MvcInvoice.Services
     {
         void Create(T entity);
 
-        T Find(ID id);
+        T Find(ID Id);
 
         IEnumerable<T> Read();
 

@@ -7,7 +7,7 @@ using MvcInvoice.Models;
 
 namespace MvcInvoice.Repositories
 {
-    public interface ICompanyRepository : IRepository<Company,int>,IDisposable
+    public interface ICompanyRepository : IRepository<Company,int>
     {
 
     }
